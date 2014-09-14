@@ -1,0 +1,89 @@
+<h1> <center>Welcome to my "Storing animal" application </center></h1>
+
+<h2> Please enter the animal attributes to be added to the database </h2>
+
+<div class="square" style="float: left;">
+  <h1> Animal </h1>
+
+<%= form_for :animal, url: animals_path do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.label :weight %><br>
+    <%= f.text_area :weight %>
+  </p>
+  <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Weight(lbs)</th>
+    <th>Description</th>
+  </tr>
+
+  <% @animals.each do |a| %>
+    <tr>
+      <td><%= a.name %></td>
+      <td><%= a.weight %></td>
+      <td><%= a.description %></td>
+    </tr>
+  <% end %>
+</table>
+</div>
+<div class="square2" style="float: right;">
+  <h1> Bird </h1>
+
+<%= form_for :bird, url: birds_path do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.label :size %><br>
+    <%= f.text_area :size %>
+  </p>
+  <p>
+    <%= f.label :colours %><br>
+    <%= f.text_area :colours %>
+  </p>
+  <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Size(cm)</th>
+    <th>Colours</th>
+    <th>Description</th>
+  </tr>
+
+  <% @birds.each do |a| %>
+    <tr>
+      <td><%= a.name %></td>
+      <td><%= a.size %></td>
+      <td><%= a.colours %></td>
+      <td><%= a.description %></td>
+    </tr>
+  <% end %>
+</table>
+</div>
+
