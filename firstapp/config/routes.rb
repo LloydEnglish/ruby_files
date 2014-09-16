@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :birds
   #get '/:id' => 'home#index'
   get '/animals/:id' => 'animals#show'
-  get '/birds/:id' => 'birds#show'
+  get '/birds/:id' => 'birds#show', as: :show
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

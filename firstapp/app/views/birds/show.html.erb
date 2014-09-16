@@ -17,3 +17,5 @@
   <%= @bird.description %>
   </p>
 <%= link_to 'home', root_path %>
+<%= link_to 'back', show_path(@prevbird) %>
+<%= link_to 'next', show_path(@nextbird ) %>

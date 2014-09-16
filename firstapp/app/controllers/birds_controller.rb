@@ -1,8 +1,5 @@
 class BirdsController < ApplicationController
 
-  def new
-  @bird = Bird.new
-	end
 
   def create
   @bird = Bird.new(birds_params)
@@ -10,33 +7,21 @@ class BirdsController < ApplicationController
   redirect_to @bird
   end
 
-	def update
-      @bird = Bird.find(birds_params)
+  def show
+  @bird = Bird.find(params[:id])
+  if Bird.find(params[:id+1])
+  @nextbird = @bird.id + 1
+	end
 
-      if @bird.update(birds_params)
-        redirect_to @bird
-      else
-        render 'edit'
-      end
-      end
 
-    def edit
-      @bird = Bird.find(params[:id])
-      end
-
-    def show
-  		@bird = Bird.find(params[:id])
-	   end
-
-    def index
+  def index
  	@birds = Bird.all
-   end
+  end
 
-   private
-  
-   def birds_params
+ private
+    def birds_params
     params.require(:bird).permit(:name, :size, :colours, :description)
-    
     end
 
+end
 end

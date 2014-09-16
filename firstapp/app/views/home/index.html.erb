@@ -25,21 +25,6 @@
  
 <% end %>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Weight(lbs)</th>
-    <th>Description</th>
-  </tr>
-
-  <% @animals.each do |a| %>
-    <tr>
-      <td><%= a.name %></td>
-      <td><%= a.weight %></td>
-      <td><%= a.description %></td>
-    </tr>
-  <% end %>
-</table>
 </div>
 <div class="square2" style="float: right;">
   <h1> Bird </h1>
@@ -67,23 +52,5 @@
   </p>
  
 <% end %>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Size(cm)</th>
-    <th>Colours</th>
-    <th>Description</th>
-  </tr>
-
-  <% @birds.each do |a| %>
-    <tr>
-      <td><%= a.name %></td>
-      <td><%= a.size %></td>
-      <td><%= a.colours %></td>
-      <td><%= a.description %></td>
-    </tr>
-  <% end %>
-</table>
 </div>
 
