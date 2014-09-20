@@ -1,0 +1,7 @@
+<h1> <center> Welcome to our Post page</center></h1>
+
+<%= render 'menu2', other_message: 'You must remove /posts to the current browser to go back to the users page' %>
+
+<% @posts.each do |p| %>
+<p> <%= p.title %><%= link_to " Post content", post_path(p) %> </p>
+<% end %>
