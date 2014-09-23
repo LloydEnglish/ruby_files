@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+# The code fomatting is very messy, hard to read (use 2 spaces instead of tabs)	
+
 layout 'layout2'
 		
 		def index
