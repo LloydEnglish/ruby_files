@@ -1,13 +1,13 @@
 class PostsController < ApplicationController
+  # some general formatting cleanup
+  layout 'layout1'
 
-layout 'layout1'
+  def index
+    @posts = Post.all
+	end
 
-		def index
-		@posts = Post.all
-		end
-
-		def show
+	def show
 		@post = Post.find(params[:id])
-		end
+	end
 
 end
