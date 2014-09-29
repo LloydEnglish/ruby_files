@@ -1,0 +1,16 @@
+<html>
+<title> Posts list</title>
+<head></head>
+<body>
+<h1> <u>Posts</u> </h1>
+
+<h2> Currently we have: </h2>
+
+<% @posts.each do |post| %>   
+<%= post.title %> 
+<%= post.user_id %>
+
+<br>
+<% end %>
+</body>
+</html>
