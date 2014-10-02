@@ -1,5 +1,9 @@
 <h1> Show page </h1>
 
+<br>
+<br>
 
 
+<%= link_to "Create a new post", new_user_post_path(:user_id) %>
+<%= link_to "Check your existing posts", user_posts_path(:user_id )%>
 <%= link_to "Log-out", session_path, method: :delete %>

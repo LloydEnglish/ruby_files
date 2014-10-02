@@ -1,3 +1,7 @@
 <h1><center> Welcome to <%= @user.username %> page</center>  </h1>
 <br>
-<%= @user.username %> <%= link_to "Go home", users_path()%> <%= link_to "Log-out user", sessions_path(), method: :delete %>
+<%= @user.username %> 
+<%= link_to "Go home", users_path()%> 
+<%= link_to "Log-out user", sessions_path(), method: :delete %>
+
+<%= link_to "Check your existing posts", user_posts_path(@user.id )%>

@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 	
 		def index
-			@user = User.find(session[:id])if session[:id]
 		@users = User.all
 		end
 

@@ -1,5 +1,8 @@
 <h1> List of posts</h1>
 <br>
 <% @posts.each do |post| %>
-<p> <%= post.title %> </p>
+<p> <%= post.title %> <%= post.body %> </p>
 <% end %>
+
+<%= link_to "Create a new Post", new_user_post_path() %>
+<%= link_to "Go home", users_path()%>
