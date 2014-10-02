@@ -1,8 +1,8 @@
 class PostsController < ApplicationController
 
 		def index
-			@posts = Post.where(user_id: User.find(params[:user_id]))
-			@user = User.find()
+			@posts = Post.all
+			
 		end
 		
 		def show
@@ -11,10 +11,11 @@ class PostsController < ApplicationController
 
 		def new	
 			@posts = Post.new
+			@user = User.where(params[:user_id]).first
 		end
 
 		def create
-			@post = Post.new(params[:post])
+			@post = Post.new(post_params)
 			if @post.save
 				flash[:notice] = "Post was added"
 				redirect_to user_posts_path

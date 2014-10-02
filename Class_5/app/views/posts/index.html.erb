@@ -6,7 +6,7 @@
 <br>
 	<%= post.body %> 
  </p>
- <%= link_to 'Post details', user_post_path(@user, @posts) %>
+ <%= link_to 'Post details', user_post_path(params[:user_id],post.id) %>
 <% end %>
 <br>
 <%= link_to "Create a new Post", new_user_post_path() %>
