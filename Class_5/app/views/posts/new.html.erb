@@ -1,13 +1,7 @@
 <h1> Create a new post here </h1>
 <br>
 
-		<%= form_for @posts do |f| %>   
-		<%= f.label :title %>   
-		<%= f.text_field :title %>
-		<%= f.label :body %>   
-		<%= f.text_field :body %>
-		<%= f.submit :create %> 
-		<% end %>
+<%=render 'form' %>
 <br>
 
 <%= link_to "Go back", user_post_path()%>

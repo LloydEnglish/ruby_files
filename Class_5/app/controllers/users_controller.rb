@@ -37,11 +37,6 @@ class UsersController < ApplicationController
 		redirect_to root_path
 		end
 
-		def logout
-			@current_user.id = nil
-			flash[:notice] = "You've successfully logged out " 
-   			redirect_to root_path   
-		end
 
 		def update
 		@user = User.find(params[:id])
@@ -50,7 +45,7 @@ class UsersController < ApplicationController
 		else
 			flash[:alert] = "We're sorry something went wrong"
 		end
-		redirect_to root_path
+		redirect_to users_path
 	end
 
 	def edit
@@ -59,7 +54,7 @@ class UsersController < ApplicationController
 
 	private
 
-	def params_users
+	def user_params
 		params.require(:user).permit(:username)
 	end
 end
