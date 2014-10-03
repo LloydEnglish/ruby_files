@@ -10,9 +10,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<% if current_user  %>
+	<h4>Hi welcome <%= current_user.username %></h4>
+	<% end %>
+
+
 <%= flash[:notice] if flash[:notice] %>
 <%= flash[:alert] if flash[:alert] %>
+
 <%= yield %>
+
+
 
 </body>
 </html>

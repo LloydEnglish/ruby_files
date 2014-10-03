@@ -7,6 +7,7 @@ class PostsController < ApplicationController
 		
 		def show
 			@post = Post.find(params[:id])
+		
 		end
 
 		def new	
@@ -16,12 +17,17 @@ class PostsController < ApplicationController
 
 		def create
 			@post = Post.new(post_params)
-			if @post.save
-				flash[:notice] = "Post was added"
-				redirect_to user_posts_path
+
+			if current_user
+				@post.user_id = current_user.id
+
+					if @post.save
+						flash[:notice] = "Post was added"
+						redirect_to user_posts_path
+			        end
 			else
-				flash[:alert] = "We're sorry but we couldn't add your post"
-				redirect_to user_posts_path
+					flash[:alert] = "We're sorry but we couldn't add your post"
+					redirect_to user_posts_path
 			end
 		end
 
