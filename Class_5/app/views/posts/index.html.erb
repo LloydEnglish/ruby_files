@@ -7,6 +7,8 @@
 	<%= post.body %> 
  </p>
  <%= link_to 'Post details', user_post_path(params[:user_id],post.id) %>
+  <%= link_to 'Edit this post', edit_user_post_path(params[:user_id],post.id) %>
+ <%= link_to 'Delete this post', user_post_path(params[:user_id],post.id), method: :delete %>
 <% end %>
 <br>
 <%= link_to "Create a new Post", new_user_post_path() %>

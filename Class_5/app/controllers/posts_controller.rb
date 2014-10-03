@@ -7,7 +7,7 @@ class PostsController < ApplicationController
 		
 		def show
 			@post = Post.find(params[:id])
-		
+
 		end
 
 		def new	
@@ -33,6 +33,7 @@ class PostsController < ApplicationController
 
 		def edit
 			@posts = Post.find(params[:id])
+			@user = User.where(params[:user_id]).first
 		end
 
 		def update
@@ -44,6 +45,16 @@ class PostsController < ApplicationController
 		end
 		redirect_to user_posts_path
 		end
+
+		def destroy
+			@post = Post.find(params[:id])   
+			if @post.destroy     
+			flash[:notice] = "This post was successfully removed "   
+			else     
+			flash[:alert] = "We can't remove this post"   
+			end   
+		redirect_to user_posts_path
+			end
 
 
 		private
