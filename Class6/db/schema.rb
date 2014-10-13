@@ -11,10 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140925234505) do
+ActiveRecord::Schema.define(version: 20141011181515) do
 
   create_table "replies", force: true do |t|
-    t.text     "body"
+    t.string   "body"
     t.integer  "user_id"
     t.integer  "topic_id"
     t.datetime "created_at"

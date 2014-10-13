@@ -1,2 +1,4 @@
-<h1>Topics#:show</h1>
-<p>Find me in app/views/topics/:show.html.erb</p>
+<h1><center> Welcome to <%= @topic.title %> page</center>  </h1>
+<br>
+<%= @topic.description %> <%= link_to "Go home", user_topics_path(@user.id)%>
+

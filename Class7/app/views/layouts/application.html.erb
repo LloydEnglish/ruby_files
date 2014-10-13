@@ -10,8 +10,10 @@
 <%= flash[:notice] if flash[:notice] %>
 <%= flash[:alert] if flash[:alert] %>
 
-<h1>Let the fun begin</h1>
-<p> <%= current_user.email if current_user %></p>
+
+<p> <b>Welcome <%= current_user.email if current_user %></b></p>
+
+
 <%= yield %>
 
 </body>

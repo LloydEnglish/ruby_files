@@ -1,0 +1,11 @@
+<br>
+<h1> <center><u>Posts page</u></center></h1>
+<br>
+
+<% @posts.each do |post| %>
+<p> <%= post.title %> <%= post.user_id %> 
+</p>
+
+<% end %>
+
+<center><%= link_to "Go home", user_path(@user)%> </center>
