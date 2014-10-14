@@ -3,7 +3,9 @@
 <br>
 
 <% @posts.each do |post| %>
-<p> <%= post.title %> <%= post.user_id %> 
+<p> <u> <%= post.title %></u> <%= post.user_id %> <%= link_to "Post description", user_post_path(params[:user_id],post.id) %>
+	<%= link_to 'Edit this post', edit_user_post_path(params[:user_id],post.id) %>
+ <%= link_to 'Delete this post', user_post_path(params[:user_id],post.id), method: :delete %>
 </p>
 
 <% end %>

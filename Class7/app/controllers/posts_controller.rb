@@ -33,9 +33,14 @@ class PostsController < ApplicationController
             else     
               flash[:alert] = "Sorry but this post can't be deleted"   
             end   
-              redirect_to user_post_path @user
+              redirect_to user_posts_path
   			end
 
+        def edit
+          @posts = Post.find(params[:id])
+          @user = User.where(params[:user_id]).first
+         end
+         
   			def update
   			 @post = Post.find(params[:id])
            		if @post.update(post_params)
@@ -43,7 +48,7 @@ class PostsController < ApplicationController
           	else
           	flash[:alert] = "We're sorry something went wrong"
             end
-          	redirect_to new_user_post_path
+          	redirect_to user_posts_path
   			end
 
 

@@ -1,6 +1,6 @@
-<h1>Welcome to your User page</h1>
+<center><h1>Welcome to your User page</h1></center>
 <center><%= link_to "Log-out", logout_path %> </center>
 <br>
 <p>Your e-mail address is <%= @user.email %> </p>
-<%= link_to "See your list of posts", user_posts_path(@user) %>
+<%= link_to "See your list of posts", user_posts_path(@user.id) %>
 <%= link_to "Create new post", new_user_post_path(@user) %>
