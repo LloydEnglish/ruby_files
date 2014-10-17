@@ -8,7 +8,24 @@
 </head>
 <body>
 
+<%= flash[:notice] if flash[:notice] %>
+<%= flash[:alert] if flash[:alert] %>
+<div class="header-bar">
+	
+	<div class="header-bar-box" id="logo">	
+		<% if current_user  %>
+	<h4>Welcome <%= current_user.email %></h4>
+		<% end %>
+
+	</div>
+	<div class="header-bar-box" id="nav">
+		<h4>Rails application</h4>
+	</div>
+		</div>
 <%= yield %>
 
+	<div id = "footer">
+	<h4>Copyright &copy; Web Design by Lloyd Chambrier</h4>
+	</div>
 </body>
 </html>
