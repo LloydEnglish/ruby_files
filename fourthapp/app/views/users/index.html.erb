@@ -1,0 +1,15 @@
+<html>
+<title> Fourth Assignment </title>
+<head></head>
+<body>
+<h1> User Page </h1>
+
+<h2> Currently we have: </h2>
+
+<% @users.each do |user| %>   
+<%= user.username %> 
+<%= link_to("Delete User", users_path(user), method: :delete) %>
+<br>
+<% end %>
+</body>
+</html>

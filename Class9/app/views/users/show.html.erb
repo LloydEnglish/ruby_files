@@ -1,0 +1,10 @@
+<center><h1>Welcome to your User page</h1></center>
+<center><%= link_to "Log-out", logout_path %> </center>
+<br>
+<%= paginate @user %>
+
+<% @user.each do |user| %>
+<tr>
+	<td> <%= user.username %> </td></tr>
+	<%end %>
+

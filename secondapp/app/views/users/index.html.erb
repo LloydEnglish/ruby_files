@@ -1,0 +1,10 @@
+<h1><center> Welcome to our User page </center></h1>
+<br>
+<%= render 'menu', message: 'You must add /posts to the current browser to see the list of posts'%>
+<br>
+<h2><b>As of now, we have: </b></h2>
+
+<% @users.each do |u| %>
+<p> <%= u.name %> <%= link_to "User information", user_path(u)%></p>
+<% end %>
+

@@ -1,0 +1,12 @@
+<h1> Create a new Post </h1>
+<br>
+<%= form_for [@user,@post] do |f| %>   
+<%=f.label :title %>   
+<%=f.text_field :title %>
+<%=f.label :description %>   
+<%=f.text_field :description %>
+<%=f.submit %> 
+<% end %>
+
+<br>
+<center><%= link_to "Go home", :back %><center>
