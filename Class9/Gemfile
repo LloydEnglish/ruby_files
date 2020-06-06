@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 gem 'simple_form'
 gem 'byebug'
 gem 'kaminari'
-gem 'cancancan', '~> 1.7'
+gem 'cancancan', '~> 3.0'
 
 
 gem 'bcrypt', require: "bcrypt"
